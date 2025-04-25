@@ -26,7 +26,7 @@ const AdminStore=create((set,get)=>({
         email,
         password
     }
-    let response =await axios.post("http://localhost:3030/api/adminLogin", reqbody);
+    let response =await axios.post(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/adminLogin`, reqbody);
     console.log(response)
     if (response.data.status === "success"){
         localStorage.setItem("token", response.data.token);
@@ -49,7 +49,7 @@ const AdminStore=create((set,get)=>({
     UserDataRequest:async ()=>{
       try{
 
-          let response=await axios.get(`http://localhost:3030/api/findUser`)
+          let response=await axios.get(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/findUser`)
           if(response.data.status === "success"){
               set({data:response.data});
           }
@@ -60,7 +60,7 @@ const AdminStore=create((set,get)=>({
 
     UserDetailsRequest:async (id)=>{
         try{
-            let response=await axios.get(`http://localhost:3030/api/userTotalDetails/${id}`)
+            let response=await axios.get(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/userTotalDetails/${id}`)
             if(response.data.status === "success"){
                 set({data:response.data});
             }
@@ -114,7 +114,7 @@ const AdminStore=create((set,get)=>({
 
         }
 
-        let response = await axios.post(`http://localhost:3030/api/updateMeal`,reqbody);
+        let response = await axios.post(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/updateMeal`,reqbody);
         console.log(response)
 
         return response
@@ -151,7 +151,7 @@ const AdminStore=create((set,get)=>({
                userId:id,
                total_paid_amount
            }
-           let response = await axios.post(`http://localhost:3030/api/updatePaid`,reqbody);
+           let response = await axios.post(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/updatePaid`,reqbody);
            return response
        }catch(e){
            console.log(e.message);
@@ -160,7 +160,7 @@ const AdminStore=create((set,get)=>({
     totalData:[],
     totalAmountDetailsRequest:async ()=>{
         try{
-            let response=await axios.get(`http://localhost:3030/api/totalAmount`)
+            let response=await axios.get(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/totalAmount`)
 
             if(response.data.status === "success"){
                 set({totalData:response.data});
@@ -173,7 +173,7 @@ const AdminStore=create((set,get)=>({
     userData:[],
     userDetailsRequest:async ()=>{
         try{
-            let response=await axios.get(`http://localhost:3030/api/totalDetail`)
+            let response=await axios.get(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/totalDetail`)
             if(response.data.status === "success"){
                 set({userData:response.data});
             }
@@ -185,7 +185,7 @@ const AdminStore=create((set,get)=>({
     bazarData:[],
     userbazarRequest:async ()=>{
         try{
-            let response=await axios.get(`http://localhost:3030/api/bazar`)
+            let response=await axios.get(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/bazar`)
             if(response.data.status === "success"){
                 set({bazarData:response.data});
             }
@@ -234,7 +234,7 @@ const AdminStore=create((set,get)=>({
               details
           }
 
-          let response=await axios.post(`http://localhost:3030/api/totalBazar`,reqbody)
+          let response=await axios.post(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/totalBazar`,reqbody)
           console.log(response)
           if(response.data.status === "success"){
               set({userbazarData:response.data});
@@ -245,7 +245,7 @@ const AdminStore=create((set,get)=>({
 
     },
     resetAllData:async ()=>{
-        let response=await axios.put(`http://localhost:3030/api/resetData`)
+        let response=await axios.put(`${import.meta.env.VITE_DOMAIN_BACKEND}/api/resetData`)
         if(response.data.status === "success"){
             return response
         }
