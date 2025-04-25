@@ -1,0 +1,100 @@
+.height {
+    height: 150px;
+    width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.buttonH {
+    width: 150px;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+.cardh {
+    height: 700px;
+    width: 1000px;
+}
+
+.cardh1 {
+    font-size: 30px;
+    height: 40px;
+    width: 500px;
+    margin-left: 250px;
+}
+
+.cardD {
+    width: 450px;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.carde {
+    margin-left: 20px;
+    width: 450px;
+}
+
+.heightt {
+    height: 150px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.hr {
+    margin-top: 4px;
+}
+
+.table1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #575151;
+}
+
+.table1 th, .table1 td {
+    text-align: center;
+    padding: 10px;
+}
+
+.table1 th {
+    background-color: #196f2d;
+    color: white;
+}
+
+.table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table1 tr:hover {
+    background-color: #f1f1f1;
+}
+
+.card {
+    border: 1px solid #28a745; /* Success green color */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* navbar এর উপরে অন্যান্য কন্টেন্ট না আসতে */
+}
+body {
+    padding-top: 70px; /* আপনার navbar-এর উচ্চতা অনুযায়ী এটিকে সমন্বয় করুন */
+}
+.navbtn{
+    background-color: #28a745;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #196f2d;
+    transition: width 0.3s ease;
+}
